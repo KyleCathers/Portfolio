@@ -1,0 +1,108 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+
+  color-scheme: light dark;
+  background-color: #1a1a1a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  overflow-x: hidden;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/*              header component             */
+
+.header {
+  display: flex;
+  height: 50px;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+button {
+  border-radius: 0px 0px 8px 8px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: inherit;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+button:hover {
+  background-color: #0a6800;
+}
+
+/*              home component             */
+.home-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image {
+  width: 50vw;
+  max-width: 500px;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 5vh;
+}
+
+.profile-image:hover {
+  transform: scale(1.02);
+}
+
+.home-text {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   font-size: 50px;
+}
+
+.sub {
+  font-size: 25px;
+}
+
+.down-arrow {
+  height: 10vh;
+  max-width: 300px;
+  width: 50vw;
+  position: absolute;
+  bottom: 30px;
+  animation-duration: 1s;
+  animation-name: wiggle-button;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  cursor: pointer;
+}
+
+@keyframes wiggle-button {
+  from {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+.about-container {
+  height: 100vh;
+  max-width: 100vw;
+}
