@@ -1,7 +1,13 @@
 function Header() {
+
+    const pageJump = (val) => {
+        let htmlElement = document.documentElement;
+        htmlElement.scrollTop = val * htmlElement.clientHeight;
+    }
+
     return (
         <div className="header">
-            <button className="header-button">
+            <button onClick={ () => { pageJump(0.95) } } className="header-button">
                 About
             </button>
             <button className="header-button">
