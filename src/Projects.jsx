@@ -1,10 +1,14 @@
 function Projects() {
     return (
-        <div className="projects-container">
+        <section className="projects-container">
             <h1>Projects</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-        </div>
+        </section>
     )
+
+    // github repos
+
+    // weather app, admin dashboard/todolist, signup page, tictactoe, calculator
 }
 
 export default Projects;
