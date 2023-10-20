@@ -1,4 +1,15 @@
-function Header() {
+function Header({setThemeState}) {
+
+    const setTheme = () => {
+        let root = document.querySelector(":root");
+        let themeButton = document.querySelector(".theme-select");
+
+        let mode = themeButton.checked; // false = dark, true = light
+
+        mode ? (root.style.colorScheme = "light") : (root.style.colorScheme = "dark");
+        setThemeState(mode);
+    }
+
     return (
         <div className="header">
             <button onClick={() => { document.querySelector('.home-container').scrollIntoView() }} className="header-button">
@@ -13,9 +24,9 @@ function Header() {
             <button onClick={() => { document.querySelector('.contact-container').scrollIntoView() }} className="header-button">
                 Contact
             </button>
-            <button class = 'theme-button'>
+            <button className="theme-button">
                 <label>
-                    <input type="checkbox"></input>
+                    <input className="theme-select" onClick={ setTheme } type="checkbox" defaultChecked></input>
                     <span className="slider"></span>
                 </label>
             </button>

@@ -1,19 +1,28 @@
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 function Contact() {
+    const form = useRef();
 
-    let sendEmail = () => {
-        Email.send({
-            Host : "smtp.live.ca",
-            Username : "kyle_c@live.ca",
-            Password : "password",
-            To : 'kyle_c@live.ca',
-            From : document.getElementById(form-email-field).value,
-            Subject : "Portfolio Contact Form Inquiry",
-            Body : `Name: ${document.getElementById(form-name-field).value}<br> Email: ${document.getElementById(form-message-field).value}`
-        }).then(
-          message => alert(message)
-        );
-    }
-
+    const sendEmail = (e) => {
+    e.preventDefault();
+  
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ encrypt IDs later
+    emailjs.sendForm(
+        "service_h859sou",      // "YOUR_SERVICE_ID"
+        "template_idievs7",     // "YOUR_TEMPLATE_ID"
+        form.current,
+        "NTthhMh14Mlf7kcP8" )   // "YOUR_USER_ID"
+        .then((result) => {
+            console.log(result.text);
+            alert("Email sent successfully");
+        }, (error) => {
+            console.log(error.text);
+            alert("Email failed to send, please try again.\nError message: " + error.text);
+        });
+        e.target.reset();
+    };
+  
     return (
         <section className="contact-container">
             <h1>Contact</h1>
@@ -57,40 +66,26 @@ function Contact() {
 
             <p>Or you can write me an email right here!</p>
 
-            <form onSubmit={() => { sendEmail();
-                                    reset();
-                                    return false;} }>
+            <form ref={form} onSubmit={sendEmail}>
                 <div className="form-row">
                     <label htmlFor="form-email-field">Email</label>
-                    <input id="form-email-field" type="email" placeholder="e.g. JohnDoe@gmail.com" />
+                    <input id="form-email-field" type="email" name="user_email" placeholder="e.g. JohnDoe@gmail.com" />
                 </div>
 
                 <div className="form-row">
                     <label htmlFor="form-name-field">Name</label>
-                    <input id="form-name-field" type="text" placeholder="e.g. John Doe"  />
+                    <input id="form-name-field" type="text" name="user_name" placeholder="e.g. John Doe"  />
                 </div>
 
                 <div className="form-row">
                     <label htmlFor="form-message-field">Message</label>
-                    <textarea name="email-message" id="form-message-field" cols="30" rows="5" placeholder="e.g. Love your website, keep it up!" ></textarea>
+                    <textarea name="message" id="form-message-field" cols="30" rows="5" placeholder="e.g. Love your website, keep it up!" ></textarea>
                 </div>
-
-                <button type="submit">Submit</button>
+                <button type="submit" value="Send">Submit</button>
             </form>
-            <script src="https://smtpjs.com/v3/smtp.js"></script>
-            <script>
-                
-            </script>
-
+            <script></script>
         </section>
     )
-
-    // add form for email?
-    // email address
-    // resume PDF
-    // phone number
-    // github
-    // linkedin
 }
 
 export default Contact;

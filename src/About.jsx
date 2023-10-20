@@ -17,7 +17,7 @@ function About() {
                 <h3>Software</h3>
                 <div className="skills-list">
                     <SkillBox link="https://www.javascript.com/" title="JavaScript"></SkillBox>
-                    <SkillBox link="https://en.wikipedia.org/wiki/CSS/" title="CSS"></SkillBox>
+                    <SkillBox link="https://en.wikipedia.org/wiki/CSS" title="CSS"></SkillBox>
                     <SkillBox link="https://en.wikipedia.org/wiki/HTML" title="HTML"></SkillBox>
                     <SkillBox link="https://react.dev/" title="React"></SkillBox>
                     <SkillBox link="https://cplusplus.com/" title="C++"></SkillBox>
@@ -35,13 +35,15 @@ function About() {
                     <SkillBox link="https://en.wikipedia.org/wiki/Circuit_design" title="Design"></SkillBox>
                     <SkillBox link="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html" title="Simulation"></SkillBox>
                     <SkillBox link="https://en.wikipedia.org/wiki/In-circuit_testing" title="Testing"></SkillBox>
+                    <SkillBox link="https://en.wikipedia.org/wiki/Soldering" title="Rework"></SkillBox>
                     <SkillBox link="https://www.altium.com/" title="Altium"></SkillBox>
                     <SkillBox link="https://github.com/KyleCathers/Processor-Design-Project" title="FPGA"></SkillBox>
                 </div>
             </section>
         </section>
-        // 
     )
 }
 
+
+// add board rework skill to HW
 export default About;
