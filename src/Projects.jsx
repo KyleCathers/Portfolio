@@ -88,6 +88,7 @@ function Projects({themeState}) {
                     githubLink="https://github.com/KyleCathers/Calculator"
                     liveLink="https://kylecathers.github.io/Calculator/"></ProjectBox>
             </div>
+            <p>For other projects, please see my Github page.</p>
         </section>
         
     )
