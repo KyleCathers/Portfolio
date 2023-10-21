@@ -11,7 +11,8 @@ function About() {
     return (
         <section className="about-container">
             <h1>About Me</h1>
-            <p>Electrical engineer with practical skills in the front-end, hardware design and testing, FPGAs, and scripting.</p>
+            <p>Electrical engineer with practical skills in front end web development, hardware design and testing, 
+                FPGAs, and scripting.</p>
             <h2>Skills</h2>
             <section>
                 <h3>Software</h3>

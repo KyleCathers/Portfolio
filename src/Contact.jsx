@@ -1,7 +1,12 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 
-function Contact() {
+function Contact({themeState}) {
+
+    let buttonStyle = {
+        backgroundColor: themeState ? "#6ee0ab" : "var(--theme-green"
+    }
+
     const form = useRef();
 
     const sendEmail = (e) => {
@@ -37,10 +42,10 @@ function Contact() {
             </div>
             
             <div className="email contact">
-                <div className="contact-icon-wrapper">
+                <a href="mailto:kyle_c@live.ca" className="contact-icon-wrapper">
                     <img src="./src/assets/gmailIcon.png" alt="Email Icon" />
-                </div>
-                <div>Email: kyle_c@live.ca</div>
+                </a>
+                <a href="mailto:kyle_c@live.ca">Email: kyle_c@live.ca</a>
             </div>
 
             <div className="phone contact">
@@ -81,7 +86,7 @@ function Contact() {
                     <label htmlFor="form-message-field">Message</label>
                     <textarea name="message" id="form-message-field" cols="30" rows="5" placeholder="e.g. Love your website, keep it up!" ></textarea>
                 </div>
-                <button type="submit" value="Send">Submit</button>
+                <button style={buttonStyle} type="submit" value="Send">Submit</button>
             </form>
             <script></script>
         </section>

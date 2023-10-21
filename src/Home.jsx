@@ -1,4 +1,9 @@
-function Home({themeState}) {
+function Home({scrollVal, themeState}) {
+    const styleDownArrow = {
+        opacity: Math.max(0, 100 - 100*scrollVal/20)/100,
+        display: (scrollVal >= 20) ? "none" : "block"
+    }
+
     return (
         <section className="home-container">
             <img className="profile-image" src="./src/assets/ProfilePic.png" alt="Kyle" />
@@ -7,9 +12,7 @@ function Home({themeState}) {
                 <div>I&#039;m Kyle</div>
             </div>
             <div className="home-text sub">And this is my website</div>
-            <img onClick={() => { console.log('poop');
-                
-                document.querySelector('.about-container').scrollIntoView() }} 
+            <img style={ styleDownArrow } onClick={() => { document.querySelector('.about-container').scrollIntoView() }} 
                         className="down-arrow" src={ themeState ? "./src/assets/down.png" : "./src/assets/downWhite.png" } alt="down"></img>
         </section>
     )

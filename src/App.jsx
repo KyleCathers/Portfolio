@@ -10,17 +10,25 @@ import Contact from './Contact.jsx'
 //  remove home page down arrow when scroll var != 0
 
 function App() {
+
+    let htmlElement = document.documentElement;
+    const [scrollVal, setScrollVal] = useState(0);
+    addEventListener("scroll", () => {
+        let val = htmlElement.scrollTop / htmlElement.clientHeight * 100;
+        setScrollVal(Math.floor(val));
+    });
+
     const [themeState, setThemeState] = useState(true); // react state for down button color
 
     return (
-        <>
+        <div className="main-page-scroller">
             <Header setThemeState={setThemeState}/>
-            <Home themeState={themeState}/>
+            <Home scrollVal={scrollVal} themeState={themeState}/>
             <About/>
-            <Projects/>
-            <Contact/>
+            <Projects themeState={themeState}/>
+            <Contact themeState={themeState}/>
             <div className={themeState ? "light fade" : "dark fade"}></div>
-        </>
+        </div>
     )
 }
 
