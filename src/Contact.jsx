@@ -1,10 +1,10 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 
-function Contact({themeState}) {
-
+function Contact({themeState, background, boxShadow}) {
     let buttonStyle = {
-        backgroundColor: themeState ? "#6ee0ab" : "var(--theme-green"
+        backgroundColor: themeState ? "#e6e6e6" : "var(--theme-grey)",
+        border: themeState ? "1px solid #231b1b" : "1px solid #9e9e9e"
     }
 
     const form = useRef();
@@ -29,7 +29,7 @@ function Contact({themeState}) {
     };
   
     return (
-        <section className="contact-container">
+        <section style={{background, boxShadow}} className="contact-container">
             <h1>Contact</h1>
 
             <p>See my information below:</p>
@@ -82,9 +82,9 @@ function Contact({themeState}) {
                     <input id="form-name-field" type="text" name="user_name" placeholder="e.g. John Doe"  />
                 </div>
 
-                <div className="form-row">
+                <div className="message form-row">
                     <label htmlFor="form-message-field">Message</label>
-                    <textarea name="message" id="form-message-field" cols="30" rows="5" placeholder="e.g. Love your website, keep it up!" ></textarea>
+                    <textarea name="message" id="form-message-field" rows="5" placeholder="e.g. Love your website, keep it up!" ></textarea>
                 </div>
                 <button style={buttonStyle} type="submit" value="Send">Submit</button>
             </form>

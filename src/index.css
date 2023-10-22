@@ -10,10 +10,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --theme-green: #0e8b00;
+  --theme-grey: #444444;
   --theme-dark: #1a1a1a;
   --theme-light: #f4f4f4;
-  --scroller-width: 800px;
+  --scroller-width: 700px;
 
   box-sizing: border-box;
 
@@ -26,28 +26,34 @@ html, body {
   padding: 0px;
 }
 
-
-.main-page-scroller {
-  max-width: var(--scroller-width);
-  padding-bottom: 50px;
+html {
+  scroll-behavior: smooth;
 }
 
 h1 {
-  font-size: 1.8rem;
-  line-height: 2.2rem;
+  font-size: 2.2rem;
+  padding-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.9rem;
+}
+
+h3 {
+  font-size: 1.6rem;
 }
 
 h1,
 h2,
 h3 {
   margin: 0px;
-  padding-bottom: 10px;
 }
 
 p {
   font-size: 1.2rem;
   margin: 0px;
   padding-bottom: 10px;
+  max-width: 600px;
 }
 
 a {
@@ -55,8 +61,22 @@ a {
   color: inherit;
 }
 
-html {
-  scroll-behavior: smooth;
+
+.main-page-scroller {
+  max-width: var(--scroller-width);
+  background-color: transparent;
+  position: relative;
+
+}
+
+.home-container,
+.about-container,
+.projects-container,
+.contact-container {
+  position: relative;
+  top: 0px;
+  padding: 50px 40px 60px 40px;
+  margin-bottom: 50px;
 }
 
 /*              header component             */
@@ -71,6 +91,8 @@ html {
   max-width: var(--scroller-width);
   z-index: 3;
   opacity: 1;
+  background-color: transparent;
+  margin-bottom: 20px;
 }
 
 .header button {
@@ -94,12 +116,13 @@ html {
 }
 
 .header-button:hover {
-  background-color: var(--theme-green);
+  background-color: var(--theme-grey);
 }
 
 /*              home component             */
 .home-container {
-  height: 100vh;
+  height: calc(100vh);
+  box-sizing: border-box;
   min-height: 615px;
   display: flex;
   flex-direction: column;
@@ -120,7 +143,7 @@ html {
 
 .profile-image {
   width: 50vw;
-  max-width: 400px;
+  max-width: 300px;
   height: auto;
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
@@ -129,18 +152,18 @@ html {
 
 .profile-image:hover {
   transform: scale(1.02);
-  filter: drop-shadow(0 0 2em var(--theme-green));
+  filter: drop-shadow(0 0 2em var(--theme-grey));
 }
 
 .home-text {
    display: flex;
    flex-direction: column;
-   align-items: center;
+   align-items: flex-start;
    font-size: 50px;
 }
 
 .sub {
-  font-size: 25px;
+  font-size: 1.8rem;
 }
 
 .down-arrow {
@@ -166,12 +189,6 @@ html {
   }
 }
 
-.about-container,
-.projects-container,
-.contact-container {
-  padding: 50px 20px 0px 20px;
-}
-
 /*                About component             */
 .skillbox-img {
   height: 50px;
@@ -185,10 +202,14 @@ html {
 
 .skills-list {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 15px;
   flex-wrap: wrap;
   padding: 10px;
+}
+
+.skills {
+  padding-top: 30px;
 }
 
 .skills-list a {
@@ -206,13 +227,15 @@ html {
   transform: scale(1.1);
 }
 
+.software {
+  padding-bottom: 30px;
+}
 
 /*      contact component         */
 .contact-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding-left: 10px;
 }
 
 .contact-container p {
@@ -267,7 +290,6 @@ form button,
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--theme-green);
   border: 1px solid #231b1b;
   border-radius: 10px;
   box-sizing: border-box;
@@ -279,8 +301,12 @@ form button,
   white-space: nowrap;
 }
 
+form button {
+  margin-top: 10px;
+}
+
 form button:hover {
-  background-color: var(--theme-green);
+  background-color: var(--theme-grey);
 }
 
 /*                     toggle button                */
@@ -320,14 +346,14 @@ form button:hover {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  box-shadow: inset 7px -4px 0px 0px var(--theme-green);
+  box-shadow: inset 7px -4px 0px 0px var(--theme-grey);
   background-color: var(--theme-light);
   transition: 0.3s;
 }
 
 .theme-button input:checked ~ .slider::before {
   transform: translateX(20px);
-  background-color: var(--theme-green);
+  background-color: var(--theme-light);
   box-shadow: none;
 }
 
@@ -347,7 +373,7 @@ form button:hover {
 
 .dark {
   background: linear-gradient(0deg, rgba(255,255,255,0) 0%, 
-                rgba(26,26,26,0) 10%, rgba(26,26,26,1) 60%);
+                rgba(0,0,0,0) 10%, rgba(0,0,0,1) 60%);
 }
 
 /*   Projects section    */
@@ -364,9 +390,9 @@ form button:hover {
 }
 
 .project-gif {
-  width: 100%;
-  max-width: 700px;
+  width: clamp(300px, 85%, 600px);
   height: auto;
+  margin-bottom: 20px;
 }
 
 .project-buttons {
@@ -375,9 +401,33 @@ form button:hover {
 }
 
 .project-box {
-  padding-bottom: 50px;
+  padding: 0px 0px 20px 10px;
+  margin-bottom: 40px;
 }
 
 .github {
   width: 120px;
+}
+
+.message {
+  width: 100%;
+}
+
+textarea {
+  max-width: 500px;
+  width: 100%;
+  height: 120px;
+}
+
+.project-gif-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.project-title {
+  padding-bottom: 10px;
+}
+
+.project-description {
+  padding-left: 10px;
 }

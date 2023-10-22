@@ -1,13 +1,16 @@
 function GithubButton({link, themeState}) {
     
     let buttonStyle = {
-        backgroundColor: themeState ? "#6ee0ab" : "var(--theme-green)"
+        backgroundColor: themeState ? "#e6e6e6" : "var(--theme-grey)",
+        border: themeState ? "1px solid #231b1b" : "1px solid #9e9e9e"
     }
+
+    let githubImage = themeState ? "./src/assets/githubIconBlack.png" : "./src/assets/githubIconWhite.png";
 
     return (
         <button style={buttonStyle} className="github project-button">
             <a href={link} target="_blank">
-                <img className="project-button-icon" src="./src/assets/githubIcon.png" alt="Github" />
+                <img className="project-button-icon" src={githubImage} alt="Github" />
                 <div>GitHub</div>
             </a>
         </button>
@@ -17,13 +20,16 @@ function GithubButton({link, themeState}) {
 function LiveButton({link, themeState}) {
 
     let buttonStyle = {
-        backgroundColor: themeState ? "#6ee0ab" : "var(--theme-green)"
+        backgroundColor: themeState ? "#e6e6e6" : "var(--theme-grey)",
+        border: themeState ? "1px solid #231b1b" : "1px solid #9e9e9e"
     }
+
+    let liveImage = themeState ? "./src/assets/liveIconBlack.png" : "./src/assets/liveIconWhite.png";
 
     return (
         <button style={buttonStyle} className="project-button">
             <a href={link} target="_blank">
-                <img className="project-button-icon" src="./src/assets/liveIcon.png" alt="Live" />
+                <img className="project-button-icon" src={liveImage} alt="Live" />
                 <div>Live</div>
             </a>
         </button>
@@ -31,18 +37,23 @@ function LiveButton({link, themeState}) {
 }
 
 function ProjectBox({title, gifLink, description, tools, githubLink, liveLink, themeState}) {
+
+    let style = {
+        borderBottom: themeState ? "solid black 3px" : "solid white 3px"
+    }
+
     return (
-        <div className="project-box">
+        <div style={style} className="project-box">
             <h2 className="project-title">{title}</h2>
-            <div>
+            <div className="project-gif-wrapper">
                 <img className="project-gif" src={gifLink} alt={title} />
             </div>
             <p className="project-description">
                 {description}
             </p>
-            <h3 className="project-tools">
+            <p className="project-tools">
                 Tools used:<br></br>{tools}
-            </h3>
+            </p>
             <div className="project-buttons">
                 <GithubButton themeState={themeState} link={githubLink}></GithubButton>
                 <LiveButton themeState={themeState} link={liveLink}></LiveButton>
@@ -51,9 +62,9 @@ function ProjectBox({title, gifLink, description, tools, githubLink, liveLink, t
     )
 }
 
-function Projects({themeState}) {
+function Projects({themeState, background, boxShadow}) {
     return (
-        <section className="projects-container">
+        <section style={{background, boxShadow}} className="projects-container">
             <h1>Projects</h1>
             <div className="projects-list">
                 <ProjectBox themeState={themeState} title="Kyle's Burgers" gifLink="./src/assets/Restaraunt.gif"

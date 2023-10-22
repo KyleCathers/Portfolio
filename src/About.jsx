@@ -7,14 +7,14 @@ function SkillBox({link, title}) {
     )
 }
 
-function About() {
+function About({background, boxShadow}) {
     return (
-        <section className="about-container">
+        <section style={{background, boxShadow}} className="about-container">
             <h1>About Me</h1>
             <p>Electrical engineer with practical skills in front end web development, hardware design and testing, 
                 FPGAs, and scripting.</p>
-            <h2>Skills</h2>
-            <section>
+            <h2 className="skills" >Skills</h2>
+            <section className='software'>
                 <h3>Software</h3>
                 <div className="skills-list">
                     <SkillBox link="https://www.javascript.com/" title="JavaScript"></SkillBox>
