@@ -10,7 +10,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --theme-grey: #444444;
+  --theme-grey: #969696;
   --theme-dark: #1a1a1a;
   --theme-light: #f4f4f4;
   --scroller-width: 700px;
@@ -66,7 +66,7 @@ a {
   max-width: var(--scroller-width);
   background-color: transparent;
   position: relative;
-
+  min-width: 280px;
 }
 
 .home-container,
@@ -91,8 +91,6 @@ a {
   max-width: var(--scroller-width);
   z-index: 3;
   opacity: 1;
-  background-color: transparent;
-  margin-bottom: 20px;
 }
 
 .header button {
@@ -107,7 +105,7 @@ a {
   background-color: inherit;
   cursor: pointer;
   transition: background-color 0.25s;
-  padding: 10px 0px 10px 0px;
+  padding: 10px 5px 10px 5px;
 }
 
 .header button img {
@@ -116,7 +114,7 @@ a {
 }
 
 .header-button:hover {
-  background-color: var(--theme-grey);
+  background-color: rgba(136, 136, 136, 0.5);
 }
 
 /*              home component             */
@@ -177,6 +175,7 @@ a {
   animation-iteration-count: infinite;
   animation-direction: alternate;
   cursor: pointer;
+  z-index: 2;
 }
 
 @keyframes wiggle-button {
@@ -262,6 +261,10 @@ a {
   padding-left: 20px;
 }
 
+.github.contact a img {
+  width: 50px;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -275,6 +278,11 @@ form {
   flex-direction: column;
   align-items: flex-start;
   gap: 5px;
+}
+
+.form-row label {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 input {
@@ -299,14 +307,18 @@ form button,
   width: 110px;
   height: 40px;
   white-space: nowrap;
+  transition: transform 0.1s linear;
 }
 
 form button {
   margin-top: 10px;
+  margin-left: 5px;
 }
 
+.project-button:hover,
 form button:hover {
   background-color: var(--theme-grey);
+  transform: scale(1.05);
 }
 
 /*                     toggle button                */
@@ -346,7 +358,7 @@ form button:hover {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  box-shadow: inset 7px -4px 0px 0px var(--theme-grey);
+  box-shadow: inset 7px -4px 0px 0px var(--theme-dark);
   background-color: var(--theme-light);
   transition: 0.3s;
 }
@@ -356,6 +368,8 @@ form button:hover {
   background-color: var(--theme-light);
   box-shadow: none;
 }
+
+/*               end of toggle button                    */
 
 .fade {
   position: fixed;
@@ -367,13 +381,13 @@ form button:hover {
 }
 
 .light {
-  background: linear-gradient(0deg, rgba(255,255,255,0) 0%, 
-                rgba(255,255,255,0) 10%, rgba(255,255,255,1) 60%);
+  background: linear-gradient(0deg, rgba(244, 244, 244, 0) 0%, 
+                rgba(244, 244, 244, 0) 10%, rgba(244,244,244,1) 60%);
 }
 
 .dark {
-  background: linear-gradient(0deg, rgba(255,255,255,0) 0%, 
-                rgba(0,0,0,0) 10%, rgba(0,0,0,1) 60%);
+  background: linear-gradient(0deg, rgba(14,14,14,0) 0%, 
+                rgba(14, 14, 14, 0) 10%, rgba(14,14,14,1) 60%);
 }
 
 /*   Projects section    */
@@ -390,7 +404,8 @@ form button:hover {
 }
 
 .project-gif {
-  width: clamp(300px, 85%, 600px);
+  width: 85%;
+  max-width: 600px;
   height: auto;
   margin-bottom: 20px;
 }
@@ -430,4 +445,70 @@ textarea {
 
 .project-description {
   padding-left: 10px;
+}
+
+@media (max-width: 470px) {
+  .theme-button label {
+    width: 40px;
+  }
+
+  .theme-button {
+    margin-right: 10px;
+  }
+
+  .slider {
+    width: 40px;
+  }
+  
+  .theme-button input:checked ~ .slider::before {
+    transform: translateX(10px);
+  }
+
+  .home-container,
+  .about-container,
+  .projects-container,
+  .contact-container {
+    padding: 50px 10px 60px 10px;
+  }
+
+  textarea {
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .header button {
+    padding: 10px 0px 10px 0px;
+  }
+
+
+  .theme-button label {
+    width: 27px;
+    margin-right: 0px;
+  }
+
+  .slider {
+    width: 27px;
+  }
+
+  .slider::before {
+    left: 4px;
+  }
+  
+  .theme-button input:checked ~ .slider::before {
+    transform: translateX(0px);
+  }
+}
+
+@media (max-width: 350px) {
+  .header button {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-height: 720px) {
+  .down-arrow {
+    display: none;
+  }
 }

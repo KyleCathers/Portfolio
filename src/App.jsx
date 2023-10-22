@@ -8,9 +8,6 @@ import About from './About.jsx'
 import Projects from './Projects.jsx'
 import Contact from './Contact.jsx'
 
-// next to do: add props (?) containing scroll var data to all components (except header)
-//  remove home page down arrow when scroll var != 0
-
 function App() {
 
     let htmlElement = document.documentElement;

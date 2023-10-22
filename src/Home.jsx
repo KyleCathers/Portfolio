@@ -1,9 +1,10 @@
+import { useState } from 'react';
+
 function Home({scrollVal, themeState, background, boxShadow}) { 
     const styleDownArrow = {
         opacity: Math.max(0, 100 - 100*scrollVal/20)/100,
         display: (scrollVal >= 20) ? "none" : "block"
     }
-
 
     return (
         <section style={{background, boxShadow}} className="home-container">
