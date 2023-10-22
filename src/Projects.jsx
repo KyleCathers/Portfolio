@@ -1,3 +1,15 @@
+import githubIconBlack from "./assets/githubIconBlack.png";
+import githubIconWhite from "./assets/githubIconWhite.png";
+
+import liveIconBlack from "./assets/liveIconBlack.png";
+import liveIconWhite from "./assets/liveIconWhite.png";
+
+import RestarauntGif from "./assets/Restaraunt.gif";
+import WeatherGif from "./assets/Weather.gif";
+import TasklistGif from "./assets/Tasklist.gif";
+import CalculatorGif from "./assets/Calculator.gif";
+
+
 function GithubButton({link, themeState}) {
     
     let buttonStyle = {
@@ -5,7 +17,7 @@ function GithubButton({link, themeState}) {
         border: themeState ? "1px solid #231b1b" : "1px solid #9e9e9e"
     }
 
-    let githubImage = themeState ? "./src/assets/githubIconBlack.png" : "./src/assets/githubIconWhite.png";
+    let githubImage = themeState ? githubIconBlack : githubIconWhite;
 
     return (
         <button style={buttonStyle} className="github project-button">
@@ -24,7 +36,7 @@ function LiveButton({link, themeState}) {
         border: themeState ? "1px solid #231b1b" : "1px solid #9e9e9e"
     }
 
-    let liveImage = themeState ? "./src/assets/liveIconBlack.png" : "./src/assets/liveIconWhite.png";
+    let liveImage = themeState ? liveIconBlack : liveIconWhite;
 
     return (
         <button style={buttonStyle} className="project-button">
@@ -67,7 +79,7 @@ function Projects({themeState, background, boxShadow}) {
         <section style={{background, boxShadow}} className="projects-container">
             <h1>Projects</h1>
             <div className="projects-list">
-                <ProjectBox themeState={themeState} title="Kyle's Burgers" gifLink="./src/assets/Restaraunt.gif"
+                <ProjectBox themeState={themeState} title="Kyle's Burgers" gifLink={RestarauntGif}
                     tools="JS, CSS, HTML, Webpack"
                     description="My most delicious website yet, a burger style restaraunt page.
                         Generated dynamically with Webpack and Javascript. Features a protein 
@@ -76,7 +88,7 @@ function Projects({themeState, background, boxShadow}) {
                     githubLink="https://github.com/KyleCathers/RestarauntPage"
                     liveLink="https://kylecathers.github.io/RestarauntPage/"></ProjectBox>
 
-                <ProjectBox themeState={themeState} title="Weather App" gifLink="./src/assets/Weather.gif"
+                <ProjectBox themeState={themeState} title="Weather App" gifLink={WeatherGif}
                     tools="JS, CSS, HTML, WeatherAPI.com, Webpack"
                     description="An app for looking up the weather from anywhere in the world! 
                         Gives weather for today, an hourly forecast, and the next 3 days 
@@ -84,14 +96,14 @@ function Projects({themeState, background, boxShadow}) {
                     githubLink="https://github.com/KyleCathers/WeatherApp"
                     liveLink="https://kylecathers.github.io/WeatherApp/"></ProjectBox>
 
-                <ProjectBox themeState={themeState} title="Task Tracker" gifLink="./src/assets/Tasklist.gif"
+                <ProjectBox themeState={themeState} title="Task Tracker" gifLink={TasklistGif}
                     tools="JS, CSS, HTML, Webpack"
                     description="A handy little app to help you keep track of your chores. Sort your tasks into projects,
                                 then assign due dates and priorities to help you stay organized!"
                     githubLink="https://github.com/KyleCathers/ToDoList"
                     liveLink="https://kylecathers.github.io/ToDoList/"></ProjectBox>
 
-                <ProjectBox themeState={themeState} title="Calculator" gifLink="./src/assets/Calculator.gif"
+                <ProjectBox themeState={themeState} title="Calculator" gifLink={CalculatorGif}
                     tools="JS, CSS, HTML"
                     description="A fully functioning calculator made with Javascript! Comes out of the box with
                                 a 10-digit 7-seven segment display, tactile buttons, and a robust case more solid 
@@ -103,15 +115,6 @@ function Projects({themeState, background, boxShadow}) {
         </section>
         
     )
-
-    // github repos
-
-    // weather app, admin dashboard/todolist, signup page, tictactoe, calculator
 }
 
 export default Projects;
-
-/*
-            <GithubButton link="https://google.com"></GithubButton>
-            <LiveButton link="https://google.com"></LiveButton>
-*/

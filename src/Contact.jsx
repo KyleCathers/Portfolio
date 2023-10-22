@@ -1,6 +1,14 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 
+import ResumeIcon from "./assets/ResumeIcon.png";
+import GmailIcon from "./assets/gmailIcon.png"
+import PhoneIcon from "./assets/PhoneIcon.png"
+import LinkedInIcon from "./assets/LinkedInIcon.png"
+import GithubIcon from "./assets/GithubIcon.png"
+
+import ResumeFile from "./assets/Resume.pdf"
+
 function Contact({themeState, background, boxShadow}) {
     let buttonStyle = {
         backgroundColor: themeState ? "#e6e6e6" : "var(--theme-grey)",
@@ -36,35 +44,35 @@ function Contact({themeState, background, boxShadow}) {
 
             <div className="resume contact">
                 <a className="contact-icon-wrapper" href="./src/assets/Resume.pdf" target="blank_">
-                    <img src="./src/assets/ResumeIcon.png" alt="Resume Download" />
+                    <img src={ResumeIcon} alt="Resume Download" />
                 </a>
-                <a href="./src/assets/Resume.pdf" target="blank_">Resume</a>
+                <a href={ResumeFile} target="blank_">Resume</a>
             </div>
             
             <div className="email contact">
                 <a href="mailto:kyle_c@live.ca" className="contact-icon-wrapper">
-                    <img src="./src/assets/gmailIcon.png" alt="Email Icon" />
+                    <img src={GmailIcon} alt="Email Icon" />
                 </a>
                 <a href="mailto:kyle_c@live.ca">Email: kyle_c@live.ca</a>
             </div>
 
             <div className="phone contact">
                 <div className="contact-icon-wrapper">
-                    <img src="./src/assets/PhoneIcon.png" alt="Phone Icon" />
+                    <img src={PhoneIcon} alt="Phone Icon" />
                 </div>
                 <div>Phone: (250) 802-5009</div>
             </div>
 
             <div className="linkedin contact">
                 <a className="contact-icon-wrapper" href="https://www.linkedin.com/in/kyle-cathers-189098195/" target="blank_">
-                    <img src="./src/assets/LinkedInIcon.png" alt="LinkedIn Link" />
+                    <img src={LinkedInIcon} alt="LinkedIn Link" />
                 </a>
                 <a href="https://www.linkedin.com/in/kyle-cathers-189098195/" target="blank_">LinkedIn</a>
             </div>
 
             <div className="github contact">
                 <a className="contact-icon-wrapper" href="https://github.com/KyleCathers" target="blank_">
-                    <img src="./src/assets/GithubIcon.png" alt="Github Link" />
+                    <img src={GithubIcon} alt="Github Link" />
                 </a>
                 <a href="https://github.com/KyleCathers" target="blank_">Github</a>
             </div>
