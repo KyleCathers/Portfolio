@@ -10,7 +10,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --theme-grey: #969696;
+  --theme-grey: #424242;
   --theme-dark: #1a1a1a;
   --theme-light: #f4f4f4;
   --scroller-width: 700px;
@@ -504,11 +504,5 @@ textarea {
 @media (max-width: 350px) {
   .header button {
     font-size: 1.2rem;
-  }
-}
-
-@media (max-height: 720px) {
-  .down-arrow {
-    display: none;
   }
 }

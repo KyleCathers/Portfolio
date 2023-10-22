@@ -1,9 +1,15 @@
 import { useState } from 'react';
 
 function Home({scrollVal, themeState, background, boxShadow}) { 
+    let [windowHeight, setWindowHeight] = useState(window.innerHeight);
+
+    addEventListener("resize", () => {
+        setWindowHeight(window.innerHeight);
+    });
+
     const styleDownArrow = {
         opacity: Math.max(0, 100 - 100*scrollVal/20)/100,
-        display: (scrollVal >= 20) ? "none" : "block"
+        display: ((scrollVal >= 20) || (windowHeight <= 730)) ? "none" : "block"
     }
 
     return (

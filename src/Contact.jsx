@@ -74,17 +74,17 @@ function Contact({themeState, background, boxShadow}) {
             <form ref={form} onSubmit={sendEmail}>
                 <div className="form-row">
                     <label htmlFor="form-email-field">Email</label>
-                    <input id="form-email-field" type="email" name="user_email" placeholder="e.g. JohnDoe@gmail.com" />
+                    <input id="form-email-field" type="email" name="user_email" placeholder="e.g. JohnDoe@gmail.com" required/>
                 </div>
 
                 <div className="form-row">
                     <label htmlFor="form-name-field">Name</label>
-                    <input id="form-name-field" type="text" name="user_name" placeholder="e.g. John Doe"  />
+                    <input id="form-name-field" type="text" name="user_name" placeholder="e.g. John Doe"  required/>
                 </div>
 
                 <div className="message form-row">
                     <label htmlFor="form-message-field">Message</label>
-                    <textarea name="message" id="form-message-field" rows="5" placeholder="e.g. Love your website, keep it up!" ></textarea>
+                    <textarea name="message" id="form-message-field" rows="5" placeholder="e.g. Love your website, keep it up!" required></textarea>
                 </div>
                 <button style={buttonStyle} type="submit" value="Send">Submit</button>
             </form>
