@@ -7,7 +7,7 @@ import PhoneIcon from "./assets/PhoneIcon.png"
 import LinkedInIcon from "./assets/LinkedInIcon.png"
 import GithubIcon from "./assets/GithubIcon.png"
 
-import ResumeFile from "./assets/Resume.pdf"
+//import ResumeFile from "./assets/Resume.pdf"
 
 function Contact({themeState, background, boxShadow}) {
     let buttonStyle = {
@@ -43,10 +43,10 @@ function Contact({themeState, background, boxShadow}) {
             <p>See my information below:</p>
 
             <div className="resume contact">
-                <a className="contact-icon-wrapper" href="./src/assets/Resume.pdf" target="blank_">
+                <a className="contact-icon-wrapper" href="https://kylecathers.github.io/Resume.pdf" target="blank_">
                     <img src={ResumeIcon} alt="Resume Download" />
                 </a>
-                <a href={ResumeFile} target="blank_">Resume</a>
+                <a href="https://kylecathers.github.io/Resume.pdf" target="blank_">Resume</a>
             </div>
             
             <div className="email contact">
