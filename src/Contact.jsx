@@ -44,7 +44,7 @@ function Contact({themeState, background, boxShadow}) {
 
             <div className="resume contact">
                 <a className="contact-icon-wrapper" href="https://kylecathers.github.io/Resume.pdf" target="blank_">
-                    <img src={ResumeIcon} alt="Resume Download" />
+                    <img src={ResumeIcon} alt="Opens Resume PDF in new page" />
                 </a>
                 <a href="https://kylecathers.github.io/Resume.pdf" target="blank_">Resume</a>
             </div>

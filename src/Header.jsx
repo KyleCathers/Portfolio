@@ -24,9 +24,9 @@ function Header({setThemeState}) {
             <button onClick={() => { document.querySelector('.contact-container').scrollIntoView() }} className="header-button">
                 Contact
             </button>
-            <button className="theme-button">
-                <label>
-                    <input className="theme-select" onClick={ setTheme } type="checkbox" defaultChecked></input>
+            <button className="theme-button" title="Dark mode toggle">
+                <label for="theme-select">
+                    <input id="theme-select" className="theme-select" onClick={ setTheme } type="checkbox" defaultChecked></input>
                     <span className="slider"></span>
                 </label>
             </button>

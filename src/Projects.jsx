@@ -22,7 +22,7 @@ function GithubButton({link, themeState}) {
     return (
         <button style={buttonStyle} className="github project-button">
             <a href={link} target="_blank">
-                <img className="project-button-icon" src={githubImage} alt="Github" />
+                <img className="project-button-icon" src={githubImage} alt="Visit Github repo" />
                 <div>GitHub</div>
             </a>
         </button>
@@ -41,7 +41,7 @@ function LiveButton({link, themeState}) {
     return (
         <button style={buttonStyle} className="project-button">
             <a href={link} target="_blank">
-                <img className="project-button-icon" src={liveImage} alt="Live" />
+                <img className="project-button-icon" src={liveImage} alt="Visit live site" />
                 <div>Live</div>
             </a>
         </button>
@@ -58,7 +58,7 @@ function ProjectBox({title, gifLink, description, tools, githubLink, liveLink, t
         <div style={style} className="project-box">
             <h2 className="project-title">{title}</h2>
             <div className="project-gif-wrapper">
-                <img className="project-gif" src={gifLink} alt={title} />
+                <img className="project-gif" src={gifLink} alt={`Visit ${title} page`} />
             </div>
             <p className="project-description">
                 {description}

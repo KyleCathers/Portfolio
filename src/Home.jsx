@@ -17,7 +17,7 @@ function Home({scrollVal, themeState, background, boxShadow}) {
 
     return (
         <section style={{background, boxShadow}} className="home-container">
-            <img className="profile-image" src={profilePic} alt="Kyle" />
+            <img className="profile-image" src={profilePic} alt="Profile Picture" />
             <div>
                 <h1 className="home-text">Hi,</h1>
                 <h1 className="home-text">I&#039;m Kyle</h1>
